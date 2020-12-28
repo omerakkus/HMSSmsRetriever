@@ -9,8 +9,7 @@ class MainActivityViewModel : ViewModel() {
     var mobileNumber = MutableLiveData<String>()
     var otp = MutableLiveData<String>()
 
-    fun onClickGenerateCode(eventName: String) {
-
-        clickObserver.value = eventName
+    fun onClickGenerateCode(eventCode: String) {
+        clickObserver.value = eventCode
     }
 }

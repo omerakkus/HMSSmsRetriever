@@ -12,7 +12,7 @@
 		"project_id":"736430079244756091",
 		"app_id":"103557001",
 		"api_key":"CgB6e3x9kNWI8zsFIEsaBA3zJn2xLplipmN9tvm7FQSjqODU38YeTRTRlYu4yJnDoFfegGs8aQNR2WdNtiLu6fPx",
-		"package_name":"com.huawei.smsretrieverdemo"
+		"package_name":"com.hms.codelab.account.smsretriever"
 	},
 	"service":{
 		"analytics":{

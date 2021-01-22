@@ -1,4 +1,4 @@
-package com.huawei.smsretrieverdemo
+package com.hms.codelab.account.smsretriever
 
 import android.Manifest
 import android.content.BroadcastReceiver
@@ -19,7 +19,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.huawei.hms.support.sms.ReadSmsManager
 import com.huawei.hms.support.sms.common.ReadSmsConstant.READ_SMS_BROADCAST_ACTION
-import com.huawei.smsretrieverdemo.databinding.ActivityMainBinding
+import com.hms.codelab.account.smsretriever.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.huawei.smsretrieverdemo
+package com.hms.codelab.account.smsretriever
 
 import android.content.BroadcastReceiver
 import android.content.Context

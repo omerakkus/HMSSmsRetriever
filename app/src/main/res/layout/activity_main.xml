@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.huawei.smsretrieverdemo.MainActivityViewModel" />
+            type="com.hms.codelab.account.smsretriever.MainActivityViewModel" />
         <import type="android.view.View" />
 
     </data>

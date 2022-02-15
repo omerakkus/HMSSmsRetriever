@@ -5,11 +5,11 @@ import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel : ViewModel() {
 
-    var clickObserver = MutableLiveData<String>()
-    var mobileNumber = MutableLiveData<String>()
-    var otp = MutableLiveData<String>()
+    var ClickObserver = MutableLiveData<String>()
+    var MobileNumber = MutableLiveData<String>()
+    var Otp = MutableLiveData<String>()
 
     fun onClickGenerateCode(eventCode: String) {
-        clickObserver.value = eventCode
+        ClickObserver.value = eventCode
     }
 }

@@ -1,35 +1,3 @@
 {
-	"agcgw":{
-		"backurl":"connect-dre.dbankcloud.cn",
-		"url":"connect-dre.hispace.hicloud.com"
-	},
-	"client":{
-		"appType":"1",
-		"cp_id":"890090000023105941",
-		"product_id":"736430079244756091",
-		"client_id":"524498865924092544",
-		"client_secret":"A9180817E92C6AB7B49FFBF8F6896AB547F08051AB6E89786F90F65A6D951A43",
-		"project_id":"736430079244756091",
-		"app_id":"103557001",
-		"api_key":"CgB6e3x9kNWI8zsFIEsaBA3zJn2xLplipmN9tvm7FQSjqODU38YeTRTRlYu4yJnDoFfegGs8aQNR2WdNtiLu6fPx",
-		"package_name":"com.hms.codelab.account.smsretriever"
-	},
-	"service":{
-		"analytics":{
-			"collector_url":"datacollector-dre.dt.hicloud.com,datacollector-dre.dt.dbankcloud.cn",
-			"resource_id":"p1",
-			"channel_id":""
-		},
-		"search":{
-			"url":"https://search-dre.cloud.huawei.com"
-		},
-		"cloudstorage":{
-			"storage_url":"https://ops-dre.agcstorage.link"
-		},
-		"ml":{
-			"mlservice_url":"ml-api-dre.ai.dbankcloud.com,ml-api-dre.ai.dbankcloud.cn"
-		}
-	},
-	"region":"DE",
-	"configuration_version":"1.0"
+	"file": "your_agconnect-services.json file"
 }

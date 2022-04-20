@@ -43,14 +43,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observe() {
-        mainActivityViewModel.clickObserver.observe(this, Observer {
+        mainActivityViewModel.ClickObserver.observe(this, Observer {
 
             when (it) {
                 "generate_code" -> {
                     val permissionCheck =
                         ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
                     if (permissionCheck == PackageManager.PERMISSION_GRANTED)
-                        generateSmsCode()
+                        GenerateSmsCode()
                     else
                         ActivityCompat.requestPermissions(
                             this,
@@ -63,7 +63,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun initSmsManager() {
 
-        val task = ReadSmsManager.startConsent(this@MainActivity, mainActivityViewModel.mobileNumber.value)
+
+
+
+
+
+        val task = ReadSmsManager.startConsent(this@MainActivity, mainActivityViewModel.MobileNumber.value)
         task.addOnCompleteListener {
 
             if (task.isSuccessful) {
@@ -73,30 +78,32 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun generateSmsCode() {
+    private fun GenerateSmsCode() {
         initSmsManager()
         registerSmsBroadcastReceiver()
-        sendSms()
-        registerOtpBroadcastReceiver()
+        SendSms()
+        RegisterOtpBroadcastReceiver()
     }
 
     private fun registerSmsBroadcastReceiver() {
+
+
 
         val intentFilter = IntentFilter(READ_SMS_BROADCAST_ACTION)
         registerReceiver(SmsBroadcastReceiver(), intentFilter)
     }
 
-    private fun sendSms() {
+    private fun SendSms() {
         val otp = Random.nextInt(
             100000,
             999999
         ).toString()
 
-        if (!mainActivityViewModel.mobileNumber.value.isNullOrEmpty()) {
+        if (!mainActivityViewModel.MobileNumber.value.isNullOrEmpty()) {
 
             val smsManager = SmsManager.getDefault()
             smsManager.sendTextMessage(
-                mainActivityViewModel.mobileNumber.value,
+                mainActivityViewModel.MobileNumber.value,
                 null,
                 "Your verification code is $otp",
                 null,
@@ -106,6 +113,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Please enter the phone number", Toast.LENGTH_LONG).show()
         }
     }
+
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -118,7 +127,8 @@ class MainActivity : AppCompatActivity() {
             111 -> {
 
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    generateSmsCode()
+
+                    GenerateSmsCode()
                 else
                     Toast.makeText(
                         this,
@@ -129,21 +139,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun registerOtpBroadcastReceiver() {
+    private fun RegisterOtpBroadcastReceiver() {
 
         val filter = IntentFilter()
         filter.addAction("service.to.activity.transfer")
-        val updateUIReceiver = object : BroadcastReceiver() {
+        val UpdateUIReceiver = object : BroadcastReceiver() {
             override fun onReceive(
                 context: Context,
                 intent: Intent
             ){
                 intent.getStringExtra("sms")?.let {
-                    mainActivityViewModel.otp.value = "Otp : " + it.split(" ")[4]
+                    mainActivityViewModel.Otp.value = "Otp : " + it.split(" ")[4]
                 }
             }
         }
-        registerReceiver(updateUIReceiver, filter)
+        registerReceiver(UpdateUIReceiver, filter)
     }
 
 }
